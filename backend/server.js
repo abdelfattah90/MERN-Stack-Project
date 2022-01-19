@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import connectDB from './db/connect.js' // DB
 import authRoutes from './routes/authRoutes.js' // ROUTERS
+import jobsRoutes from './routes/jobsRoutes.js' // ROUTERS
 import notFoundMiddleware from './middleware/not-found.js' // MIDDLEWARE
 import errorHandlerMiddleware from './middleware/error-handler.js' // MIDDLEWARE
 
@@ -15,6 +16,7 @@ app.get('/', (req, res) => {
   res.send('')
 })
 app.use('/api/v1/auth', authRoutes)
+app.use('/api/v1/jobs', jobsRoutes)
 
 // MIDDLEWARE
 app.use(notFoundMiddleware)

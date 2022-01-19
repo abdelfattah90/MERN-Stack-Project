@@ -10,7 +10,7 @@ const router = express.Router()
 
 import { register, login, updateUser } from '../controllers/authController.js'
 // import authenticateUser from '../middleware/auth.js'
-router.route('register').post(register) //apiLimiter,
+router.route('/register').post(register) //apiLimiter,
 router.route('/login').post(login)
 router.route('/updateUser').patch(updateUser)
 
