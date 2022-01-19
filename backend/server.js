@@ -1,5 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
+import 'express-async-errors'
 import connectDB from './db/connect.js' // DB
 import authRoutes from './routes/authRoutes.js' // ROUTERS
 import jobsRoutes from './routes/jobsRoutes.js' // ROUTERS
@@ -34,7 +35,6 @@ const start = async () => {
 }
 start()
 
-// import 'express-async-errors'
 // import morgan from 'morgan'
 
 // import { dirname } from 'path'
