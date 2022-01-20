@@ -14,7 +14,10 @@ const PORT = process.env.PORT
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send('')
+  res.json({ msg: 'Ahmed' })
+})
+app.get('/api/v1', (req, res) => {
+  res.json({ msg: 'API' })
 })
 app.use('/api/v1/auth', authRoutes)
 app.use('/api/v1/jobs', jobsRoutes)

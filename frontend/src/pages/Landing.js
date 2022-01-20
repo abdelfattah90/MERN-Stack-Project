@@ -2,7 +2,20 @@ import main from '../assets/images/main.svg'
 import Wrapper from '../assets/wrappers/LandingPage'
 import Logo from '../components/Logo'
 import { Link } from 'react-router-dom'
-function Landing() {
+import { useEffect } from 'react'
+const Landing = () => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch('/api/v1')
+      const data = await response.json()
+      console.log(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
   return (
     <Wrapper>
       <nav>
